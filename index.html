@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio" />
+    <meta
+      name="description"
+      content="Portfolio of Axel Belliandri Adriansah, an IT Operations and Backend Developer focused on Laravel, PHP, Node.js, REST APIs, automation, and system integration."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,18 +18,22 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>Raj Shekhar</title>
+    <title>Axel Belliandri Adriansah | IT Operations &amp; Backend Developer</title>
   </head>
   <body class="light" id="top">
     <header class="header center">
       <h3>
-        <a href="https://rjshkhr.github.io/cleanfolio-minimal" class="link"
-          >RS.</a
-        >
+        <a href="#top" class="link" aria-label="Back to top">AA.</a>
       </h3>
 
-      <nav class="nav center">
-        <ul class="nav__list center">
+      <nav class="nav center" aria-label="Primary navigation">
+        <ul class="nav__list center" id="primary-navigation">
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#about">About</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#experience">Experience</a>
+          </li>
           <li class="nav__list-item">
             <a class="link link--nav" href="#projects">Projects</a>
           </li>
@@ -34,17 +41,27 @@
             <a class="link link--nav" href="#skills">Skills</a>
           </li>
           <li class="nav__list-item">
+            <a class="link link--nav" href="#achievements">Achievements</a>
+          </li>
+          <li class="nav__list-item">
             <a class="link link--nav" href="#contact">Contact</a>
           </li>
         </ul>
 
-        <button type="button" aria-label="toggle theme" class="btn btn--icon">
+        <button
+          type="button"
+          aria-label="Switch to dark theme"
+          aria-pressed="false"
+          class="btn btn--icon theme-toggle"
+        >
           <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
         </button>
 
         <button
           type="button"
-          aria-label="toggle navigation"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
           class="btn btn--icon nav__hamburger"
         >
           <i aria-hidden="true" class="fas fa-bars"></i>
@@ -54,174 +71,326 @@
 
     <main>
       <!-- About -->
-      <div class="about center">
-        <h1>Hi, I am <span class="about__name">Raj Shekhar.</span></h1>
-        <h2 class="about__role">A Front end Developer.</h2>
-        <p class="about__desc">
-          Consectetur neque sed quam molestiae consectetur nesciunt sit alias
-          Vitae libero perferendis reprehenderit optio veritatis Accusantium at
-          voluptatum cumque temporibus et Explicabo iste porro quis numquam
-          distinctio Repellendus adipisci nam perferendis amet eaque hic
-          Voluptates
-        </p>
+      <section class="about" id="about">
+        <div class="about__content">
+          <p class="about__eyebrow">Information Technology Operations</p>
+          <h1>
+            Hi, I am
+            <span class="about__name">Axel Belliandri Adriansah.</span>
+          </h1>
+          <h2 class="about__role">Backend / Full-Stack Developer</h2>
+          <p class="about__desc">
+            I work across backend development and IT operations, building
+            reliable applications, automating repetitive workflows, and
+            connecting systems so teams can operate more effectively.
+          </p>
 
-        <div class="about__contact center">
-          <a href="https://example.com">
-            <span class="btn btn--outline">Resume</span>
-          </a>
-
-          <a
-            href="https://github.com/rjshkhr"
-            aria-label="github"
-            class="link link--icon"
-          >
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a>
-
-          <a
-            href="https://linkedin.com/in/rjshkhr"
-            aria-label="linkedin"
-            class="link link--icon"
-          >
-            <i aria-hidden="true" class="fab fa-linkedin"></i>
-          </a>
+          <div class="about__contact">
+            <a
+              href="https://www.linkedin.com/in/axel-belliandri-220620276/"
+              class="btn btn--outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i aria-hidden="true" class="fab fa-linkedin"></i>
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/axelba1337"
+              class="btn btn--outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+              GitHub
+            </a>
+            <a href="#projects" class="btn btn--outline">View Projects</a>
+          </div>
         </div>
-      </div>
+
+        <div class="profile">
+          <img
+            class="profile__image"
+            src="assets/img/profile.jpg"
+            alt="Portrait of Axel Belliandri Adriansah"
+            width="1023"
+            height="1537"
+          />
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section experience" id="experience">
+        <h2 class="section__title">Experience</h2>
+
+        <div class="experience__list">
+          <article class="experience-card">
+            <header class="experience-card__header">
+              <div>
+                <h3>Information Technology Operations Support</h3>
+                <p class="experience-card__company">
+                  PT Internet Pratama Indonesia
+                </p>
+              </div>
+            </header>
+            <ul class="experience-card__details">
+              <li>
+                Support day-to-day IT operations through endpoint,
+                infrastructure, hardware, and peripheral troubleshooting.
+              </li>
+              <li>
+                Apply networking fundamentals while providing user technical
+                support, operational monitoring, and technical documentation.
+              </li>
+              <li>
+                Contribute to automation, internal tools, and system
+                integration for operational workflows.
+              </li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <header class="experience-card__header">
+              <div>
+                <h3>Backend RESTful API Developer</h3>
+                <p class="experience-card__company">PT ADAMLABS</p>
+              </div>
+            </header>
+            <ul class="experience-card__details">
+              <li>
+                Develop REST APIs with Node.js, Express.js, Sequelize, and
+                PostgreSQL.
+              </li>
+              <li>
+                Implement request validation and consistent error handling for
+                dependable API behavior.
+              </li>
+              <li>
+                Test and document endpoints with Postman and Swagger.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
       <!-- Projects -->
       <section id="projects" class="section projects">
         <h2 class="section__title">Projects</h2>
+        <p class="section__intro">
+          Verified work across backend engineering, full-stack development,
+          and system integration.
+        </p>
 
-        <div class="projects__grid">
-          <div class="project">
-            <h3>Project 1</h3>
-            <p class="project__description">
-              Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-              sapiente debitis labore sed ipsam Mollitia repellat illum quod
-              unde beatae Quis
-            </p>
-            <ul class="project__stack">
-              <li class="project__stack-item">SASS</li>
-              <li class="project__stack-item">TypeScript</li>
-              <li class="project__stack-item">React</li>
-            </ul>
+        <div class="projects__featured">
+          <article class="featured-project" id="neev-virtual-assistant">
+            <div class="featured-project__media">
+              <img
+                class="featured-project__image"
+                src="assets/img/neev-virtual-assistant.png"
+                alt="Neev Virtual Assistant chatbot interface on the CV Neev Solusindo website"
+                width="1117"
+                height="512"
+              />
+            </div>
 
-            <a
-              href="https://github.com"
-              aria-label="source code"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://example.com"
-              aria-label="live preview"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
+            <div class="featured-project__content">
+              <p class="featured-project__eyebrow">Featured Project</p>
+              <h3 class="featured-project__title">
+                Rancang Bangun Virtual Assistant berbasis Chatbot dengan
+                Semantic Similarity pada Website CV Neev Solusindo
+              </h3>
+              <p class="featured-project__description">
+                A Laravel and PHP virtual assistant that helps website visitors
+                find relevant answers from a managed FAQ knowledge base through
+                semantic similarity, with an administrative interface for
+                maintaining the supporting content.
+              </p>
 
-          <div class="project">
-            <h3>Project 2</h3>
-            <p class="project__description">
-              Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-              sapiente debitis labore sed ipsam Mollitia repellat illum quod
-              unde beatae Quis
-            </p>
-            <ul class="project__stack">
-              <li class="project__stack-item">SASS</li>
-              <li class="project__stack-item">TypeScript</li>
-              <li class="project__stack-item">React</li>
-            </ul>
+              <div class="featured-project__highlights">
+                <h4>Technical Highlights</h4>
+                <ul>
+                  <li>
+                    Matches visitor questions against curated FAQ content using
+                    semantic similarity and embeddings.
+                  </li>
+                  <li>
+                    Provides an admin panel for maintaining chatbot knowledge
+                    and relational data.
+                  </li>
+                  <li>
+                    Routes unmatched questions through a defined fallback and
+                    handoff flow.
+                  </li>
+                </ul>
+              </div>
 
-            <a
-              href="https://github.com"
-              aria-label="source code"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://example.com"
-              aria-label="live preview"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
+              <div class="featured-project__technology">
+                <h4>Technology Stack</h4>
+                <ul class="project__stack">
+                  <li class="project__stack-item">Laravel</li>
+                  <li class="project__stack-item">PHP</li>
+                  <li class="project__stack-item">Semantic Similarity</li>
+                  <li class="project__stack-item">Embeddings</li>
+                  <li class="project__stack-item">FAQ Knowledge Base</li>
+                  <li class="project__stack-item">Chatbot</li>
+                  <li class="project__stack-item">Admin Panel</li>
+                  <li class="project__stack-item">Relational Database</li>
+                  <li class="project__stack-item">
+                    Fallback / Handoff Flow
+                  </li>
+                </ul>
+              </div>
 
-          <div class="project">
-            <h3>Project 3</h3>
-            <p class="project__description">
-              Ipsum accusamus ea excepturi aliquid eligendi amet. Explicabo
-              sapiente debitis labore sed ipsam Mollitia repellat illum quod
-              unde beatae Quis
-            </p>
-            <ul class="project__stack">
-              <li class="project__stack-item">SASS</li>
-              <li class="project__stack-item">TypeScript</li>
-              <li class="project__stack-item">React</li>
-            </ul>
-
-            <a
-              href="https://github.com"
-              aria-label="source code"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://example.com"
-              aria-label="live preview"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
+              <div class="featured-project__links">
+                <a
+                  class="btn btn--outline"
+                  href="https://repository.dinamika.ac.id/id/eprint/8340/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+                  Research / Academic Record
+                </a>
+                <a
+                  class="btn btn--outline"
+                  href="assets/documents/surat-pencatatan-ciptaan-neev.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i aria-hidden="true" class="fas fa-file-pdf"></i>
+                  Copyright Certificate
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
       <!-- Skills -->
       <section class="section skills" id="skills">
         <h2 class="section__title">Skills</h2>
-        <ul class="skills__list">
-          <li class="skills__list-item btn btn--plain">HTML</li>
-          <li class="skills__list-item btn btn--plain">CSS</li>
-          <li class="skills__list-item btn btn--plain">SCSS</li>
-          <li class="skills__list-item btn btn--plain">JavaScript</li>
-          <li class="skills__list-item btn btn--plain">TypeScript</li>
-          <li class="skills__list-item btn btn--plain">React</li>
-          <li class="skills__list-item btn btn--plain">Redux</li>
-          <li class="skills__list-item btn btn--plain">Git</li>
-          <li class="skills__list-item btn btn--plain">Material UI</li>
-          <li class="skills__list-item btn btn--plain">Jest</li>
-          <li class="skills__list-item btn btn--plain">Enzyme</li>
-          <li class="skills__list-item btn btn--plain">CI/CD</li>
-        </ul>
+        <div class="skills__groups">
+          <article class="skill-group">
+            <h3>Backend</h3>
+            <ul class="skills__list">
+              <li class="skills__list-item">PHP</li>
+              <li class="skills__list-item">Laravel</li>
+              <li class="skills__list-item">JavaScript</li>
+              <li class="skills__list-item">Node.js</li>
+              <li class="skills__list-item">Express.js</li>
+              <li class="skills__list-item">REST API</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3>Database</h3>
+            <ul class="skills__list">
+              <li class="skills__list-item">PostgreSQL</li>
+              <li class="skills__list-item">MySQL</li>
+              <li class="skills__list-item">Sequelize</li>
+              <li class="skills__list-item">SQL</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3>Tools</h3>
+            <ul class="skills__list">
+              <li class="skills__list-item">Git</li>
+              <li class="skills__list-item">GitHub</li>
+              <li class="skills__list-item">Postman</li>
+              <li class="skills__list-item">Swagger</li>
+              <li class="skills__list-item">Docker</li>
+            </ul>
+          </article>
+
+          <article class="skill-group">
+            <h3>IT Operations</h3>
+            <ul class="skills__list">
+              <li class="skills__list-item">System Troubleshooting</li>
+              <li class="skills__list-item">Networking</li>
+              <li class="skills__list-item">Endpoint Support</li>
+              <li class="skills__list-item">Automation</li>
+              <li class="skills__list-item">Technical Documentation</li>
+              <li class="skills__list-item">System Integration</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section class="section achievements" id="achievements">
+        <h2 class="section__title">
+          Achievements &amp; Intellectual Property
+        </h2>
+        <article class="achievement achievement--ip">
+          <a class="achievement__project-link" href="#neev-virtual-assistant">
+            Related project: Neev Virtual Assistant
+          </a>
+          <p class="achievement__eyebrow">Copyright Registration</p>
+          <h3>Virtual Assistant Berbasis Chatbot dengan Semantic Similarity</h3>
+          <dl class="achievement__metadata">
+            <div>
+              <dt>Creators</dt>
+              <dd>
+                Axel Belliandri Adriansah, Tan Amelia, and Erwin Sutomo
+              </dd>
+            </div>
+            <div>
+              <dt>Registration Number</dt>
+              <dd>001413951</dd>
+            </div>
+            <div>
+              <dt>Year</dt>
+              <dd>2026</dd>
+            </div>
+          </dl>
+          <a
+            class="btn btn--outline achievement__button"
+            href="assets/documents/surat-pencatatan-ciptaan-neev.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i aria-hidden="true" class="fas fa-file-pdf"></i>
+            View Copyright Certificate
+          </a>
+        </article>
       </section>
 
       <!-- Contact -->
       <section class="section contact center" id="contact">
         <h2 class="section__title">Contact</h2>
-        <a href="mailto:rjshekhar.official@gmail.com">
-          <span class="btn btn--outline">Email me</span>
-        </a>
+        <p class="contact__description">
+          Interested in backend development, automation, system integration,
+          or IT operations? Connect with me through LinkedIn or GitHub.
+        </p>
+        <div class="contact__links center">
+          <a
+            href="https://www.linkedin.com/in/axel-belliandri-220620276/"
+            class="btn btn--outline"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/axelba1337"
+            class="btn btn--outline"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <a
-        href="https://github.com/rjshkhr/cleanfolio-minimal"
-        class="link footer__link"
-      >
-        Created By Raj Shekhar
+      <a href="#top" class="link footer__link">
+        &copy; <span id="footer-year"></span> Axel Belliandri Adriansah
       </a>
     </footer>
 
     <div class="scroll-container">
       <div class="scroll-top">
-        <a aria-label="Scroll up" href="#top">
+        <a aria-label="Scroll to top" href="#top">
           <i aria-hidden="true" class="fas fa-arrow-up"></i>
         </a>
       </div>

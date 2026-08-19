@@ -1,13 +1,16 @@
-# Cleanfolio Minimal
+# Axel Belliandri Adriansah - Portfolio
 
-A portfolio template built with HTML, CSS, and JavaScript.
+A lightweight static portfolio for GitHub Pages, based on Cleanfolio Minimal.
 
-## Preview
+## Technology
 
-[![imgur](https://i.imgur.com/5z7cvMz.gif)](https://rjshkhr.github.io/cleanfolio-minimal)
+- HTML
+- CSS
+- JavaScript
 
-[Live Demo](https://rjshkhr.github.io/cleanfolio-minimal)
+No build step or package installation is required. Open `index.html` directly or
+serve the repository with any static HTTP server.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project retains the original Cleanfolio Minimal MIT license.

@@ -1,63 +1,80 @@
 const body = document.body
+const themeToggle = document.querySelector('.theme-toggle')
+const btnTheme = document.querySelector('#btn-theme')
+const navToggle = document.querySelector('.nav__hamburger')
+const btnHamburger = navToggle.querySelector('i')
+const navList = document.querySelector('.nav__list')
+const navLinks = document.querySelectorAll('.nav__list .link--nav')
 
-const btnTheme = document.querySelector('.fa-moon')
-const btnHamburger = document.querySelector('.fa-bars')
-
-const addThemeClass = (bodyClass, btnClass) => {
-  body.classList.add(bodyClass)
-  btnTheme.classList.add(btnClass)
+const getStoredTheme = () => {
+  const theme = localStorage.getItem('portfolio-theme')
+  return theme === 'dark' || theme === 'light' ? theme : 'light'
 }
 
-const getBodyTheme = localStorage.getItem('portfolio-theme')
-const getBtnTheme = localStorage.getItem('portfolio-btn-theme')
+const setTheme = (theme, persist = true) => {
+  const isDark = theme === 'dark'
 
-addThemeClass(getBodyTheme, getBtnTheme)
+  body.classList.remove('light', 'dark')
+  body.classList.add(theme)
+  btnTheme.classList.toggle('fa-sun', isDark)
+  btnTheme.classList.toggle('fa-moon', !isDark)
+  themeToggle.setAttribute('aria-pressed', String(isDark))
+  themeToggle.setAttribute(
+    'aria-label',
+    isDark ? 'Switch to light theme' : 'Switch to dark theme'
+  )
 
-const isDark = () => body.classList.contains('dark')
-
-const setTheme = (bodyClass, btnClass) => {
-
-	body.classList.remove(localStorage.getItem('portfolio-theme'))
-	btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
-
-  addThemeClass(bodyClass, btnClass)
-
-	localStorage.setItem('portfolio-theme', bodyClass)
-	localStorage.setItem('portfolio-btn-theme', btnClass)
+  if (persist) {
+    localStorage.setItem('portfolio-theme', theme)
+  }
 }
 
-const toggleTheme = () =>
-	isDark() ? setTheme('light', 'fa-moon') : setTheme('dark', 'fa-sun')
+setTheme(getStoredTheme(), false)
 
-btnTheme.addEventListener('click', toggleTheme)
+themeToggle.addEventListener('click', () => {
+  setTheme(body.classList.contains('dark') ? 'light' : 'dark')
+})
 
-const displayList = () => {
-	const navUl = document.querySelector('.nav__list')
-
-	if (btnHamburger.classList.contains('fa-bars')) {
-		btnHamburger.classList.remove('fa-bars')
-		btnHamburger.classList.add('fa-times')
-		navUl.classList.add('display-nav-list')
-	} else {
-		btnHamburger.classList.remove('fa-times')
-		btnHamburger.classList.add('fa-bars')
-		navUl.classList.remove('display-nav-list')
-	}
+const setNavigationOpen = (isOpen) => {
+  navList.classList.toggle('display-nav-list', isOpen)
+  btnHamburger.classList.toggle('fa-bars', !isOpen)
+  btnHamburger.classList.toggle('fa-times', isOpen)
+  navToggle.setAttribute('aria-expanded', String(isOpen))
+  navToggle.setAttribute(
+    'aria-label',
+    isOpen ? 'Close navigation' : 'Open navigation'
+  )
 }
 
-btnHamburger.addEventListener('click', displayList)
+navToggle.addEventListener('click', () => {
+  const isOpen = navToggle.getAttribute('aria-expanded') === 'true'
+  setNavigationOpen(!isOpen)
+})
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => setNavigationOpen(false))
+})
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    setNavigationOpen(false)
+  }
+})
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 760) {
+    setNavigationOpen(false)
+  }
+})
 
 const scrollUp = () => {
-	const btnScrollTop = document.querySelector('.scroll-top')
+  const btnScrollTop = document.querySelector('.scroll-top')
+  const hasScrolled =
+    body.scrollTop > 500 || document.documentElement.scrollTop > 500
 
-	if (
-		body.scrollTop > 500 ||
-		document.documentElement.scrollTop > 500
-	) {
-		btnScrollTop.style.display = 'block'
-	} else {
-		btnScrollTop.style.display = 'none'
-	}
+  btnScrollTop.style.display = hasScrolled ? 'block' : 'none'
 }
 
-document.addEventListener('scroll', scrollUp)
+document.addEventListener('scroll', scrollUp, { passive: true })
+
+document.querySelector('#footer-year').textContent = new Date().getFullYear()
